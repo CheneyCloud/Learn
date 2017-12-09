@@ -45,7 +45,7 @@ void FarhToCels()
     lower = 0;  /*设置温度表的最低温度为0*/
     upper = 300;    /*设置温度表的最高温度为300*/
     step = 20;  /*设置步长为20*/
-    centigrade = lower; /*初始化华氏度的温度*/
+    centigrade = lower; /*初始化摄氏度的温度*/
     printf("Centigrade  To  Fahrenheit\n");
     printf("----------------------------\n");
     while(centigrade <= upper)
