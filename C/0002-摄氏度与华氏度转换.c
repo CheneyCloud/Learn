@@ -19,7 +19,7 @@ int main()
     return 0;
 }
 
-void CelsToFarh()
+void FarhToCels()
 {
     float centigrade, fahrenheit;
     int upper, lower, step;
@@ -38,7 +38,7 @@ void CelsToFarh()
     return;
 }
 
-void FarhToCels()
+void CelsToFarh()
 {
     float centigrade, fahrenheit;
     int upper, lower, step;
