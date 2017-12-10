@@ -1,5 +1,5 @@
 /*
-----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
     华氏度转换为摄氏度
     摄氏度转换为华氏度
     步长为20
@@ -8,6 +8,9 @@
 */
 
 #include<stdio.h>
+#define LOWER 0     /*设置温度表的最低温度为0*/
+#define UPPER 300   /*设置温度表的最高温度为300*/
+#define STEP 20     /*设置步长为20*/
 
 void CelsToFarh();
 void FarhToCels();
@@ -22,37 +25,27 @@ int main()
 void FarhToCels()
 {
     float centigrade, fahrenheit;
-    int upper, lower, step;
-    lower = 0;  /*设置温度表的最低温度为0*/
-    upper = 300;    /*设置温度表的最高温度为300*/
-    step = 20;  /*设置步长为20*/
-    fahrenheit = lower; /*初始化华氏度的温度*/
+    fahrenheit = LOWER; /*初始化华氏度的温度*/
     printf("Fahrenheit  To  Centigrade\n");
     printf("----------------------------\n");
-    while(fahrenheit <= upper)
+    while(fahrenheit <= UPPER)
     {
         centigrade = (fahrenheit - 32) * 5 / 9;
         printf("%3.0f\t\t%5.1f\n", fahrenheit, centigrade);
-        fahrenheit += step;
+        fahrenheit += STEP;
     }
     return;
 }
 
 void CelsToFarh()
 {
-    float centigrade, fahrenheit;
-    int upper, lower, step;
-    lower = 0;  /*设置温度表的最低温度为0*/
-    upper = 300;    /*设置温度表的最高温度为300*/
-    step = 20;  /*设置步长为20*/
-    centigrade = lower; /*初始化摄氏度的温度*/
+    float centigrade;
     printf("Centigrade  To  Fahrenheit\n");
     printf("----------------------------\n");
-    while(centigrade <= upper)
+    for(centigrade = LOWER; centigrade <= UPPER; centigrade += STEP)
     {
-        fahrenheit = centigrade * 9 / 5 + 32;
-        printf("%3.0f\t\t%5.1f\n", centigrade, fahrenheit);
-        centigrade += step;
+        printf("%3.0f\t\t%5.1f\n", centigrade, centigrade * 9 / 5 + 32);
     }
     return;
 }
+
