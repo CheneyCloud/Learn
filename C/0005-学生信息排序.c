@@ -32,7 +32,7 @@ int main()
     getchar();  /*读走换行符*/
     //pStu = (STU *)malloc(stuNumber * sizeof(STU));
     pStu = (STU *)calloc(stuNumber, sizeof(STU));
-    for(i = 0; i < stuNumber; i++)
+    for (i = 0; i < stuNumber; i++)
     {
         printf("请输入第%d个学生的学号：", i + 1);
         gets((pStu + i)->id);
@@ -45,7 +45,7 @@ int main()
     printf("学生信息如下：\n");
     PrintInfo(pStu, stuNumber);
     Sort(pStu, stuNumber);
-    if(stuNumber >= 10)
+    if (stuNumber >= 10)
     {
         printf("前10名的学生信息如下：\n");
         PrintInfo(pStu, 10);
@@ -63,11 +63,11 @@ void Sort(STU *pStu, int stuNumber)
 {
     int i, j;
     STU temp;
-    for(i = 0; i < stuNumber - 1; i++)
+    for (i = 0; i < stuNumber - 1; i++)
     {
-        for(j = i + 1; j < stuNumber; j++)
+        for (j = i + 1; j < stuNumber; j++)
         {
-            if((pStu + j)->performance > (pStu + i)->performance)
+            if ((pStu + j)->performance > (pStu + i)->performance)
             {
                 temp = *(pStu + j);
                 *(pStu + j) = *(pStu + i);
@@ -83,7 +83,7 @@ void PrintInfo(STU *pStu, int stuNumber)
     int i;
     printf("-----------------------------------------\n");
     printf("学号\t\t姓名\t绩点\n");
-    for(i = 0; i < stuNumber; i++)
+    for (i = 0; i < stuNumber; i++)
     {
         printf("%10s%10s%7.1f\n", (pStu + i)->id, (pStu + i)->name, (pStu + i)->performance);
     }
