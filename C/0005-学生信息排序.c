@@ -62,13 +62,13 @@ int main()
 void Sort(STU *pStu, int stuNumber)
 {
     int i, j;
+    STU temp;
     for(i = 0; i < stuNumber - 1; i++)
     {
         for(j = i + 1; j < stuNumber; j++)
         {
             if((pStu + j)->performance > (pStu + i)->performance)
             {
-                STU temp;
                 temp = *(pStu + j);
                 *(pStu + j) = *(pStu + i);
                 *(pStu + i) = temp;
