@@ -69,7 +69,7 @@ int* TwoSum(int* nums, int numsSize, int target)
             if (nums[i] + nums[j] == target)
             {
                 p[0] = i;
-                p[j] = j;
+                p[1] = j;
             }
         }
     }
