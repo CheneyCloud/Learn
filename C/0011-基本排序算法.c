@@ -77,7 +77,7 @@ void BubbleSort(int *array, int length)
     int i, j, temp;
     for (i = 0; i < length - 1; i++)
     {
-        for (j = 0; j < length; j++)
+        for (j = 0; j < length -1 - i; j++)
         {
             if (array[j] > array[j + 1])
             {
